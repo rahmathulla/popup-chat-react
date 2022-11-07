@@ -15,7 +15,8 @@ function MessageList(props) {
   }, props.messages.map(function (message, i) {
     return /*#__PURE__*/React.createElement(Message, {
       message: message,
-      key: i
+      key: i,
+      onFileDownload: props.onFileDownload
     });
   }));
 }

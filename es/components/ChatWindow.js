@@ -10,10 +10,12 @@ function ChatWindow(props) {
     onClose = props.onClose,
     agentProfile = props.agentProfile,
     showEmoji = props.showEmoji,
+    showTemplate = props.showTemplate,
     fileUpload = props.fileUpload,
     messageList = props.messageList,
     onUserInputSubmit = props.onUserInputSubmit,
     onFilesSelected = props.onFilesSelected,
+    onFileDownload = props.onFileDownload,
     pinMessage = props.pinMessage,
     onPinMessage = props.onPinMessage,
     placeholder = props.placeholder;
@@ -34,11 +36,13 @@ function ChatWindow(props) {
     onPinMessage: onPinMessage
   }), /*#__PURE__*/React.createElement(MessageList, {
     messages: messageList,
+    onFileDownload: onFileDownload,
     imageUrl: imageUrl
   }), /*#__PURE__*/React.createElement(UserInput, {
     onSubmit: onUserInputSubmit,
     onFilesSelected: onFilesSelected,
     showEmoji: showEmoji,
+    showTemplate: showTemplate,
     fileUpload: fileUpload,
     placeholder: placeholder
   }));
@@ -48,12 +52,14 @@ ChatWindow.propTypes = process.env.NODE_ENV !== "production" ? {
   onClose: PropTypes.func.isRequired,
   agentProfile: PropTypes.object.isRequired,
   showEmoji: PropTypes.bool,
+  showTemplate: PropTypes.bool,
   fileUpload: PropTypes.bool,
   messageList: PropTypes.array,
   onUserInputSubmit: PropTypes.func.isRequired,
   onFilesSelected: PropTypes.func,
   pinMessage: PropTypes.object,
   onPinMessage: PropTypes.func,
+  onFileDownload: PropTypes.func,
   placeholder: PropTypes.string
 } : {};
 export default ChatWindow;

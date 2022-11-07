@@ -95,7 +95,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 8);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -118,7 +118,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__0__;
 if (false) { var throwOnDirectAccess, ReactIs; } else {
   // By explicitly using `prop-types` you are opting into new production behavior.
   // http://fb.me/prop-types-in-prod
-  module.exports = __webpack_require__(29)();
+  module.exports = __webpack_require__(30)();
 }
 
 
@@ -199,7 +199,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _Linkify = __webpack_require__(16);
+var _Linkify = __webpack_require__(17);
 
 var _Linkify2 = _interopRequireDefault(_Linkify);
 
@@ -3170,7 +3170,7 @@ exports.default = _Linkify2.default;
 	return this || (typeof window !== 'undefined' ? window : global);
 }());
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(28)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(29)))
 
 /***/ }),
 /* 6 */
@@ -3180,16 +3180,16 @@ module.exports = JSON.parse("[{\"name\":\"People\",\"emojis\":[{\"no\":6,\"code\
 
 /***/ }),
 /* 7 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module) {
 
-module.exports = __webpack_require__(31);
-
+module.exports = JSON.parse("[{\"id\":1,\"name\":\"Template 1\"},{\"id\":2,\"name\":\"Template 2\"},{\"id\":3,\"name\":\"Template 3\"}]");
 
 /***/ }),
 /* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
-// extracted by mini-css-extract-plugin
+module.exports = __webpack_require__(32);
+
 
 /***/ }),
 /* 9 */
@@ -3237,6 +3237,12 @@ module.exports = __webpack_require__(31);
 /* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+/* 17 */
+/***/ (function(module, exports, __webpack_require__) {
+
 "use strict";
 
 
@@ -3250,19 +3256,19 @@ var _react = __webpack_require__(0);
 
 var React = _interopRequireWildcard(_react);
 
-var _defaultComponentDecorator = __webpack_require__(17);
+var _defaultComponentDecorator = __webpack_require__(18);
 
 var _defaultComponentDecorator2 = _interopRequireDefault(_defaultComponentDecorator);
 
-var _defaultHrefDecorator = __webpack_require__(18);
+var _defaultHrefDecorator = __webpack_require__(19);
 
 var _defaultHrefDecorator2 = _interopRequireDefault(_defaultHrefDecorator);
 
-var _defaultMatchDecorator = __webpack_require__(19);
+var _defaultMatchDecorator = __webpack_require__(20);
 
 var _defaultMatchDecorator2 = _interopRequireDefault(_defaultMatchDecorator);
 
-var _defaultTextDecorator = __webpack_require__(27);
+var _defaultTextDecorator = __webpack_require__(28);
 
 var _defaultTextDecorator2 = _interopRequireDefault(_defaultTextDecorator);
 
@@ -3364,7 +3370,7 @@ Linkify.defaultProps = {
 exports.default = Linkify;
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3389,7 +3395,7 @@ exports.default = function (decoratedHref, decoratedText, key) {
 };
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3404,7 +3410,7 @@ exports.default = function (href) {
 };
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3414,11 +3420,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _linkifyIt = __webpack_require__(20);
+var _linkifyIt = __webpack_require__(21);
 
 var _linkifyIt2 = _interopRequireDefault(_linkifyIt);
 
-var _tlds = __webpack_require__(26);
+var _tlds = __webpack_require__(27);
 
 var _tlds2 = _interopRequireDefault(_tlds);
 
@@ -3432,7 +3438,7 @@ exports.default = function (text) {
 };
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3588,7 +3594,7 @@ function createNormalizer() {
 function compile(self) {
 
   // Load & clone RE patterns.
-  var re = self.re = __webpack_require__(21)(self.__opts__);
+  var re = self.re = __webpack_require__(22)(self.__opts__);
 
   // Define dynamic patterns
   var tlds = self.__tlds__.slice();
@@ -4075,7 +4081,7 @@ module.exports = LinkifyIt;
 
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4086,10 +4092,10 @@ module.exports = function (opts) {
   var re = {};
 
   // Use direct extract instead of `regenerate` to reduse browserified size
-  re.src_Any = __webpack_require__(22).source;
-  re.src_Cc  = __webpack_require__(23).source;
-  re.src_Z   = __webpack_require__(24).source;
-  re.src_P   = __webpack_require__(25).source;
+  re.src_Any = __webpack_require__(23).source;
+  re.src_Cc  = __webpack_require__(24).source;
+  re.src_Z   = __webpack_require__(25).source;
+  re.src_P   = __webpack_require__(26).source;
 
   // \p{\Z\P\Cc\CF} (white spaces + control + format + punctuation)
   re.src_ZPCc = [ re.src_Z, re.src_P, re.src_Cc ].join('|');
@@ -4261,37 +4267,37 @@ module.exports = function (opts) {
 
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports) {
 
 module.exports=/[\0-\uD7FF\uE000-\uFFFF]|[\uD800-\uDBFF][\uDC00-\uDFFF]|[\uD800-\uDBFF](?![\uDC00-\uDFFF])|(?:[^\uD800-\uDBFF]|^)[\uDC00-\uDFFF]/
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports) {
 
 module.exports=/[\0-\x1F\x7F-\x9F]/
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports) {
 
 module.exports=/[ \xA0\u1680\u2000-\u200A\u2028\u2029\u202F\u205F\u3000]/
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports) {
 
 module.exports=/[!-#%-\*,-\/:;\?@\[-\]_\{\}\xA1\xA7\xAB\xB6\xB7\xBB\xBF\u037E\u0387\u055A-\u055F\u0589\u058A\u05BE\u05C0\u05C3\u05C6\u05F3\u05F4\u0609\u060A\u060C\u060D\u061B\u061E\u061F\u066A-\u066D\u06D4\u0700-\u070D\u07F7-\u07F9\u0830-\u083E\u085E\u0964\u0965\u0970\u09FD\u0A76\u0AF0\u0C84\u0DF4\u0E4F\u0E5A\u0E5B\u0F04-\u0F12\u0F14\u0F3A-\u0F3D\u0F85\u0FD0-\u0FD4\u0FD9\u0FDA\u104A-\u104F\u10FB\u1360-\u1368\u1400\u166D\u166E\u169B\u169C\u16EB-\u16ED\u1735\u1736\u17D4-\u17D6\u17D8-\u17DA\u1800-\u180A\u1944\u1945\u1A1E\u1A1F\u1AA0-\u1AA6\u1AA8-\u1AAD\u1B5A-\u1B60\u1BFC-\u1BFF\u1C3B-\u1C3F\u1C7E\u1C7F\u1CC0-\u1CC7\u1CD3\u2010-\u2027\u2030-\u2043\u2045-\u2051\u2053-\u205E\u207D\u207E\u208D\u208E\u2308-\u230B\u2329\u232A\u2768-\u2775\u27C5\u27C6\u27E6-\u27EF\u2983-\u2998\u29D8-\u29DB\u29FC\u29FD\u2CF9-\u2CFC\u2CFE\u2CFF\u2D70\u2E00-\u2E2E\u2E30-\u2E4E\u3001-\u3003\u3008-\u3011\u3014-\u301F\u3030\u303D\u30A0\u30FB\uA4FE\uA4FF\uA60D-\uA60F\uA673\uA67E\uA6F2-\uA6F7\uA874-\uA877\uA8CE\uA8CF\uA8F8-\uA8FA\uA8FC\uA92E\uA92F\uA95F\uA9C1-\uA9CD\uA9DE\uA9DF\uAA5C-\uAA5F\uAADE\uAADF\uAAF0\uAAF1\uABEB\uFD3E\uFD3F\uFE10-\uFE19\uFE30-\uFE52\uFE54-\uFE61\uFE63\uFE68\uFE6A\uFE6B\uFF01-\uFF03\uFF05-\uFF0A\uFF0C-\uFF0F\uFF1A\uFF1B\uFF1F\uFF20\uFF3B-\uFF3D\uFF3F\uFF5B\uFF5D\uFF5F-\uFF65]|\uD800[\uDD00-\uDD02\uDF9F\uDFD0]|\uD801\uDD6F|\uD802[\uDC57\uDD1F\uDD3F\uDE50-\uDE58\uDE7F\uDEF0-\uDEF6\uDF39-\uDF3F\uDF99-\uDF9C]|\uD803[\uDF55-\uDF59]|\uD804[\uDC47-\uDC4D\uDCBB\uDCBC\uDCBE-\uDCC1\uDD40-\uDD43\uDD74\uDD75\uDDC5-\uDDC8\uDDCD\uDDDB\uDDDD-\uDDDF\uDE38-\uDE3D\uDEA9]|\uD805[\uDC4B-\uDC4F\uDC5B\uDC5D\uDCC6\uDDC1-\uDDD7\uDE41-\uDE43\uDE60-\uDE6C\uDF3C-\uDF3E]|\uD806[\uDC3B\uDE3F-\uDE46\uDE9A-\uDE9C\uDE9E-\uDEA2]|\uD807[\uDC41-\uDC45\uDC70\uDC71\uDEF7\uDEF8]|\uD809[\uDC70-\uDC74]|\uD81A[\uDE6E\uDE6F\uDEF5\uDF37-\uDF3B\uDF44]|\uD81B[\uDE97-\uDE9A]|\uD82F\uDC9F|\uD836[\uDE87-\uDE8B]|\uD83A[\uDD5E\uDD5F]/
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module) {
 
 module.exports = JSON.parse("[\"aaa\",\"aarp\",\"abarth\",\"abb\",\"abbott\",\"abbvie\",\"abc\",\"able\",\"abogado\",\"abudhabi\",\"ac\",\"academy\",\"accenture\",\"accountant\",\"accountants\",\"aco\",\"actor\",\"ad\",\"adac\",\"ads\",\"adult\",\"ae\",\"aeg\",\"aero\",\"aetna\",\"af\",\"afl\",\"africa\",\"ag\",\"agakhan\",\"agency\",\"ai\",\"aig\",\"airbus\",\"airforce\",\"airtel\",\"akdn\",\"al\",\"alfaromeo\",\"alibaba\",\"alipay\",\"allfinanz\",\"allstate\",\"ally\",\"alsace\",\"alstom\",\"am\",\"amazon\",\"americanexpress\",\"americanfamily\",\"amex\",\"amfam\",\"amica\",\"amsterdam\",\"analytics\",\"android\",\"anquan\",\"anz\",\"ao\",\"aol\",\"apartments\",\"app\",\"apple\",\"aq\",\"aquarelle\",\"ar\",\"arab\",\"aramco\",\"archi\",\"army\",\"arpa\",\"art\",\"arte\",\"as\",\"asda\",\"asia\",\"associates\",\"at\",\"athleta\",\"attorney\",\"au\",\"auction\",\"audi\",\"audible\",\"audio\",\"auspost\",\"author\",\"auto\",\"autos\",\"avianca\",\"aw\",\"aws\",\"ax\",\"axa\",\"az\",\"azure\",\"ba\",\"baby\",\"baidu\",\"banamex\",\"bananarepublic\",\"band\",\"bank\",\"bar\",\"barcelona\",\"barclaycard\",\"barclays\",\"barefoot\",\"bargains\",\"baseball\",\"basketball\",\"bauhaus\",\"bayern\",\"bb\",\"bbc\",\"bbt\",\"bbva\",\"bcg\",\"bcn\",\"bd\",\"be\",\"beats\",\"beauty\",\"beer\",\"bentley\",\"berlin\",\"best\",\"bestbuy\",\"bet\",\"bf\",\"bg\",\"bh\",\"bharti\",\"bi\",\"bible\",\"bid\",\"bike\",\"bing\",\"bingo\",\"bio\",\"biz\",\"bj\",\"black\",\"blackfriday\",\"blockbuster\",\"blog\",\"bloomberg\",\"blue\",\"bm\",\"bms\",\"bmw\",\"bn\",\"bnpparibas\",\"bo\",\"boats\",\"boehringer\",\"bofa\",\"bom\",\"bond\",\"boo\",\"book\",\"booking\",\"bosch\",\"bostik\",\"boston\",\"bot\",\"boutique\",\"box\",\"br\",\"bradesco\",\"bridgestone\",\"broadway\",\"broker\",\"brother\",\"brussels\",\"bs\",\"bt\",\"build\",\"builders\",\"business\",\"buy\",\"buzz\",\"bv\",\"bw\",\"by\",\"bz\",\"bzh\",\"ca\",\"cab\",\"cafe\",\"cal\",\"call\",\"calvinklein\",\"cam\",\"camera\",\"camp\",\"canon\",\"capetown\",\"capital\",\"capitalone\",\"car\",\"caravan\",\"cards\",\"care\",\"career\",\"careers\",\"cars\",\"casa\",\"case\",\"cash\",\"casino\",\"cat\",\"catering\",\"catholic\",\"cba\",\"cbn\",\"cbre\",\"cbs\",\"cc\",\"cd\",\"center\",\"ceo\",\"cern\",\"cf\",\"cfa\",\"cfd\",\"cg\",\"ch\",\"chanel\",\"channel\",\"charity\",\"chase\",\"chat\",\"cheap\",\"chintai\",\"christmas\",\"chrome\",\"church\",\"ci\",\"cipriani\",\"circle\",\"cisco\",\"citadel\",\"citi\",\"citic\",\"city\",\"cityeats\",\"ck\",\"cl\",\"claims\",\"cleaning\",\"click\",\"clinic\",\"clinique\",\"clothing\",\"cloud\",\"club\",\"clubmed\",\"cm\",\"cn\",\"co\",\"coach\",\"codes\",\"coffee\",\"college\",\"cologne\",\"com\",\"comcast\",\"commbank\",\"community\",\"company\",\"compare\",\"computer\",\"comsec\",\"condos\",\"construction\",\"consulting\",\"contact\",\"contractors\",\"cooking\",\"cookingchannel\",\"cool\",\"coop\",\"corsica\",\"country\",\"coupon\",\"coupons\",\"courses\",\"cpa\",\"cr\",\"credit\",\"creditcard\",\"creditunion\",\"cricket\",\"crown\",\"crs\",\"cruise\",\"cruises\",\"cu\",\"cuisinella\",\"cv\",\"cw\",\"cx\",\"cy\",\"cymru\",\"cyou\",\"cz\",\"dabur\",\"dad\",\"dance\",\"data\",\"date\",\"dating\",\"datsun\",\"day\",\"dclk\",\"dds\",\"de\",\"deal\",\"dealer\",\"deals\",\"degree\",\"delivery\",\"dell\",\"deloitte\",\"delta\",\"democrat\",\"dental\",\"dentist\",\"desi\",\"design\",\"dev\",\"dhl\",\"diamonds\",\"diet\",\"digital\",\"direct\",\"directory\",\"discount\",\"discover\",\"dish\",\"diy\",\"dj\",\"dk\",\"dm\",\"dnp\",\"do\",\"docs\",\"doctor\",\"dog\",\"domains\",\"dot\",\"download\",\"drive\",\"dtv\",\"dubai\",\"dunlop\",\"dupont\",\"durban\",\"dvag\",\"dvr\",\"dz\",\"earth\",\"eat\",\"ec\",\"eco\",\"edeka\",\"edu\",\"education\",\"ee\",\"eg\",\"email\",\"emerck\",\"energy\",\"engineer\",\"engineering\",\"enterprises\",\"epson\",\"equipment\",\"er\",\"ericsson\",\"erni\",\"es\",\"esq\",\"estate\",\"et\",\"etisalat\",\"eu\",\"eurovision\",\"eus\",\"events\",\"exchange\",\"expert\",\"exposed\",\"express\",\"extraspace\",\"fage\",\"fail\",\"fairwinds\",\"faith\",\"family\",\"fan\",\"fans\",\"farm\",\"farmers\",\"fashion\",\"fast\",\"fedex\",\"feedback\",\"ferrari\",\"ferrero\",\"fi\",\"fiat\",\"fidelity\",\"fido\",\"film\",\"final\",\"finance\",\"financial\",\"fire\",\"firestone\",\"firmdale\",\"fish\",\"fishing\",\"fit\",\"fitness\",\"fj\",\"fk\",\"flickr\",\"flights\",\"flir\",\"florist\",\"flowers\",\"fly\",\"fm\",\"fo\",\"foo\",\"food\",\"foodnetwork\",\"football\",\"ford\",\"forex\",\"forsale\",\"forum\",\"foundation\",\"fox\",\"fr\",\"free\",\"fresenius\",\"frl\",\"frogans\",\"frontdoor\",\"frontier\",\"ftr\",\"fujitsu\",\"fun\",\"fund\",\"furniture\",\"futbol\",\"fyi\",\"ga\",\"gal\",\"gallery\",\"gallo\",\"gallup\",\"game\",\"games\",\"gap\",\"garden\",\"gay\",\"gb\",\"gbiz\",\"gd\",\"gdn\",\"ge\",\"gea\",\"gent\",\"genting\",\"george\",\"gf\",\"gg\",\"ggee\",\"gh\",\"gi\",\"gift\",\"gifts\",\"gives\",\"giving\",\"gl\",\"glass\",\"gle\",\"global\",\"globo\",\"gm\",\"gmail\",\"gmbh\",\"gmo\",\"gmx\",\"gn\",\"godaddy\",\"gold\",\"goldpoint\",\"golf\",\"goo\",\"goodyear\",\"goog\",\"google\",\"gop\",\"got\",\"gov\",\"gp\",\"gq\",\"gr\",\"grainger\",\"graphics\",\"gratis\",\"green\",\"gripe\",\"grocery\",\"group\",\"gs\",\"gt\",\"gu\",\"guardian\",\"gucci\",\"guge\",\"guide\",\"guitars\",\"guru\",\"gw\",\"gy\",\"hair\",\"hamburg\",\"hangout\",\"haus\",\"hbo\",\"hdfc\",\"hdfcbank\",\"health\",\"healthcare\",\"help\",\"helsinki\",\"here\",\"hermes\",\"hgtv\",\"hiphop\",\"hisamitsu\",\"hitachi\",\"hiv\",\"hk\",\"hkt\",\"hm\",\"hn\",\"hockey\",\"holdings\",\"holiday\",\"homedepot\",\"homegoods\",\"homes\",\"homesense\",\"honda\",\"horse\",\"hospital\",\"host\",\"hosting\",\"hot\",\"hoteles\",\"hotels\",\"hotmail\",\"house\",\"how\",\"hr\",\"hsbc\",\"ht\",\"hu\",\"hughes\",\"hyatt\",\"hyundai\",\"ibm\",\"icbc\",\"ice\",\"icu\",\"id\",\"ie\",\"ieee\",\"ifm\",\"ikano\",\"il\",\"im\",\"imamat\",\"imdb\",\"immo\",\"immobilien\",\"in\",\"inc\",\"industries\",\"infiniti\",\"info\",\"ing\",\"ink\",\"institute\",\"insurance\",\"insure\",\"int\",\"international\",\"intuit\",\"investments\",\"io\",\"ipiranga\",\"iq\",\"ir\",\"irish\",\"is\",\"ismaili\",\"ist\",\"istanbul\",\"it\",\"itau\",\"itv\",\"jaguar\",\"java\",\"jcb\",\"je\",\"jeep\",\"jetzt\",\"jewelry\",\"jio\",\"jll\",\"jm\",\"jmp\",\"jnj\",\"jo\",\"jobs\",\"joburg\",\"jot\",\"joy\",\"jp\",\"jpmorgan\",\"jprs\",\"juegos\",\"juniper\",\"kaufen\",\"kddi\",\"ke\",\"kerryhotels\",\"kerrylogistics\",\"kerryproperties\",\"kfh\",\"kg\",\"kh\",\"ki\",\"kia\",\"kids\",\"kim\",\"kinder\",\"kindle\",\"kitchen\",\"kiwi\",\"km\",\"kn\",\"koeln\",\"komatsu\",\"kosher\",\"kp\",\"kpmg\",\"kpn\",\"kr\",\"krd\",\"kred\",\"kuokgroup\",\"kw\",\"ky\",\"kyoto\",\"kz\",\"la\",\"lacaixa\",\"lamborghini\",\"lamer\",\"lancaster\",\"lancia\",\"land\",\"landrover\",\"lanxess\",\"lasalle\",\"lat\",\"latino\",\"latrobe\",\"law\",\"lawyer\",\"lb\",\"lc\",\"lds\",\"lease\",\"leclerc\",\"lefrak\",\"legal\",\"lego\",\"lexus\",\"lgbt\",\"li\",\"lidl\",\"life\",\"lifeinsurance\",\"lifestyle\",\"lighting\",\"like\",\"lilly\",\"limited\",\"limo\",\"lincoln\",\"linde\",\"link\",\"lipsy\",\"live\",\"living\",\"lk\",\"llc\",\"llp\",\"loan\",\"loans\",\"locker\",\"locus\",\"loft\",\"lol\",\"london\",\"lotte\",\"lotto\",\"love\",\"lpl\",\"lplfinancial\",\"lr\",\"ls\",\"lt\",\"ltd\",\"ltda\",\"lu\",\"lundbeck\",\"luxe\",\"luxury\",\"lv\",\"ly\",\"ma\",\"macys\",\"madrid\",\"maif\",\"maison\",\"makeup\",\"man\",\"management\",\"mango\",\"map\",\"market\",\"marketing\",\"markets\",\"marriott\",\"marshalls\",\"maserati\",\"mattel\",\"mba\",\"mc\",\"mckinsey\",\"md\",\"me\",\"med\",\"media\",\"meet\",\"melbourne\",\"meme\",\"memorial\",\"men\",\"menu\",\"merckmsd\",\"mg\",\"mh\",\"miami\",\"microsoft\",\"mil\",\"mini\",\"mint\",\"mit\",\"mitsubishi\",\"mk\",\"ml\",\"mlb\",\"mls\",\"mm\",\"mma\",\"mn\",\"mo\",\"mobi\",\"mobile\",\"moda\",\"moe\",\"moi\",\"mom\",\"monash\",\"money\",\"monster\",\"mormon\",\"mortgage\",\"moscow\",\"moto\",\"motorcycles\",\"mov\",\"movie\",\"mp\",\"mq\",\"mr\",\"ms\",\"msd\",\"mt\",\"mtn\",\"mtr\",\"mu\",\"museum\",\"music\",\"mutual\",\"mv\",\"mw\",\"mx\",\"my\",\"mz\",\"na\",\"nab\",\"nagoya\",\"name\",\"natura\",\"navy\",\"nba\",\"nc\",\"ne\",\"nec\",\"net\",\"netbank\",\"netflix\",\"network\",\"neustar\",\"new\",\"news\",\"next\",\"nextdirect\",\"nexus\",\"nf\",\"nfl\",\"ng\",\"ngo\",\"nhk\",\"ni\",\"nico\",\"nike\",\"nikon\",\"ninja\",\"nissan\",\"nissay\",\"nl\",\"no\",\"nokia\",\"northwesternmutual\",\"norton\",\"now\",\"nowruz\",\"nowtv\",\"np\",\"nr\",\"nra\",\"nrw\",\"ntt\",\"nu\",\"nyc\",\"nz\",\"obi\",\"observer\",\"office\",\"okinawa\",\"olayan\",\"olayangroup\",\"oldnavy\",\"ollo\",\"om\",\"omega\",\"one\",\"ong\",\"onl\",\"online\",\"ooo\",\"open\",\"oracle\",\"orange\",\"org\",\"organic\",\"origins\",\"osaka\",\"otsuka\",\"ott\",\"ovh\",\"pa\",\"page\",\"panasonic\",\"paris\",\"pars\",\"partners\",\"parts\",\"party\",\"passagens\",\"pay\",\"pccw\",\"pe\",\"pet\",\"pf\",\"pfizer\",\"pg\",\"ph\",\"pharmacy\",\"phd\",\"philips\",\"phone\",\"photo\",\"photography\",\"photos\",\"physio\",\"pics\",\"pictet\",\"pictures\",\"pid\",\"pin\",\"ping\",\"pink\",\"pioneer\",\"pizza\",\"pk\",\"pl\",\"place\",\"play\",\"playstation\",\"plumbing\",\"plus\",\"pm\",\"pn\",\"pnc\",\"pohl\",\"poker\",\"politie\",\"porn\",\"post\",\"pr\",\"pramerica\",\"praxi\",\"press\",\"prime\",\"pro\",\"prod\",\"productions\",\"prof\",\"progressive\",\"promo\",\"properties\",\"property\",\"protection\",\"pru\",\"prudential\",\"ps\",\"pt\",\"pub\",\"pw\",\"pwc\",\"py\",\"qa\",\"qpon\",\"quebec\",\"quest\",\"racing\",\"radio\",\"re\",\"read\",\"realestate\",\"realtor\",\"realty\",\"recipes\",\"red\",\"redstone\",\"redumbrella\",\"rehab\",\"reise\",\"reisen\",\"reit\",\"reliance\",\"ren\",\"rent\",\"rentals\",\"repair\",\"report\",\"republican\",\"rest\",\"restaurant\",\"review\",\"reviews\",\"rexroth\",\"rich\",\"richardli\",\"ricoh\",\"ril\",\"rio\",\"rip\",\"ro\",\"rocher\",\"rocks\",\"rodeo\",\"rogers\",\"room\",\"rs\",\"rsvp\",\"ru\",\"rugby\",\"ruhr\",\"run\",\"rw\",\"rwe\",\"ryukyu\",\"sa\",\"saarland\",\"safe\",\"safety\",\"sakura\",\"sale\",\"salon\",\"samsclub\",\"samsung\",\"sandvik\",\"sandvikcoromant\",\"sanofi\",\"sap\",\"sarl\",\"sas\",\"save\",\"saxo\",\"sb\",\"sbi\",\"sbs\",\"sc\",\"sca\",\"scb\",\"schaeffler\",\"schmidt\",\"scholarships\",\"school\",\"schule\",\"schwarz\",\"science\",\"scot\",\"sd\",\"se\",\"search\",\"seat\",\"secure\",\"security\",\"seek\",\"select\",\"sener\",\"services\",\"ses\",\"seven\",\"sew\",\"sex\",\"sexy\",\"sfr\",\"sg\",\"sh\",\"shangrila\",\"sharp\",\"shaw\",\"shell\",\"shia\",\"shiksha\",\"shoes\",\"shop\",\"shopping\",\"shouji\",\"show\",\"showtime\",\"si\",\"silk\",\"sina\",\"singles\",\"site\",\"sj\",\"sk\",\"ski\",\"skin\",\"sky\",\"skype\",\"sl\",\"sling\",\"sm\",\"smart\",\"smile\",\"sn\",\"sncf\",\"so\",\"soccer\",\"social\",\"softbank\",\"software\",\"sohu\",\"solar\",\"solutions\",\"song\",\"sony\",\"soy\",\"spa\",\"space\",\"sport\",\"spot\",\"sr\",\"srl\",\"ss\",\"st\",\"stada\",\"staples\",\"star\",\"statebank\",\"statefarm\",\"stc\",\"stcgroup\",\"stockholm\",\"storage\",\"store\",\"stream\",\"studio\",\"study\",\"style\",\"su\",\"sucks\",\"supplies\",\"supply\",\"support\",\"surf\",\"surgery\",\"suzuki\",\"sv\",\"swatch\",\"swiss\",\"sx\",\"sy\",\"sydney\",\"systems\",\"sz\",\"tab\",\"taipei\",\"talk\",\"taobao\",\"target\",\"tatamotors\",\"tatar\",\"tattoo\",\"tax\",\"taxi\",\"tc\",\"tci\",\"td\",\"tdk\",\"team\",\"tech\",\"technology\",\"tel\",\"temasek\",\"tennis\",\"teva\",\"tf\",\"tg\",\"th\",\"thd\",\"theater\",\"theatre\",\"tiaa\",\"tickets\",\"tienda\",\"tiffany\",\"tips\",\"tires\",\"tirol\",\"tj\",\"tjmaxx\",\"tjx\",\"tk\",\"tkmaxx\",\"tl\",\"tm\",\"tmall\",\"tn\",\"to\",\"today\",\"tokyo\",\"tools\",\"top\",\"toray\",\"toshiba\",\"total\",\"tours\",\"town\",\"toyota\",\"toys\",\"tr\",\"trade\",\"trading\",\"training\",\"travel\",\"travelchannel\",\"travelers\",\"travelersinsurance\",\"trust\",\"trv\",\"tt\",\"tube\",\"tui\",\"tunes\",\"tushu\",\"tv\",\"tvs\",\"tw\",\"tz\",\"ua\",\"ubank\",\"ubs\",\"ug\",\"uk\",\"unicom\",\"university\",\"uno\",\"uol\",\"ups\",\"us\",\"uy\",\"uz\",\"va\",\"vacations\",\"vana\",\"vanguard\",\"vc\",\"ve\",\"vegas\",\"ventures\",\"verisign\",\"vermögensberater\",\"vermögensberatung\",\"versicherung\",\"vet\",\"vg\",\"vi\",\"viajes\",\"video\",\"vig\",\"viking\",\"villas\",\"vin\",\"vip\",\"virgin\",\"visa\",\"vision\",\"viva\",\"vivo\",\"vlaanderen\",\"vn\",\"vodka\",\"volkswagen\",\"volvo\",\"vote\",\"voting\",\"voto\",\"voyage\",\"vu\",\"vuelos\",\"wales\",\"walmart\",\"walter\",\"wang\",\"wanggou\",\"watch\",\"watches\",\"weather\",\"weatherchannel\",\"webcam\",\"weber\",\"website\",\"wed\",\"wedding\",\"weibo\",\"weir\",\"wf\",\"whoswho\",\"wien\",\"wiki\",\"williamhill\",\"win\",\"windows\",\"wine\",\"winners\",\"wme\",\"wolterskluwer\",\"woodside\",\"work\",\"works\",\"world\",\"wow\",\"ws\",\"wtc\",\"wtf\",\"xbox\",\"xerox\",\"xfinity\",\"xihuan\",\"xin\",\"xxx\",\"xyz\",\"yachts\",\"yahoo\",\"yamaxun\",\"yandex\",\"ye\",\"yodobashi\",\"yoga\",\"yokohama\",\"you\",\"youtube\",\"yt\",\"yun\",\"za\",\"zappos\",\"zara\",\"zero\",\"zip\",\"zm\",\"zone\",\"zuerich\",\"zw\",\"ελ\",\"ευ\",\"бг\",\"бел\",\"дети\",\"ею\",\"католик\",\"ком\",\"мкд\",\"мон\",\"москва\",\"онлайн\",\"орг\",\"рус\",\"рф\",\"сайт\",\"срб\",\"укр\",\"қаз\",\"հայ\",\"ישראל\",\"קום\",\"ابوظبي\",\"اتصالات\",\"ارامكو\",\"الاردن\",\"البحرين\",\"الجزائر\",\"السعودية\",\"العليان\",\"المغرب\",\"امارات\",\"ایران\",\"بارت\",\"بازار\",\"بيتك\",\"بھارت\",\"تونس\",\"سودان\",\"سورية\",\"شبكة\",\"عراق\",\"عرب\",\"عمان\",\"فلسطين\",\"قطر\",\"كاثوليك\",\"كوم\",\"مصر\",\"مليسيا\",\"موريتانيا\",\"موقع\",\"همراه\",\"پاکستان\",\"ڀارت\",\"कॉम\",\"नेट\",\"भारत\",\"भारतम्\",\"भारोत\",\"संगठन\",\"বাংলা\",\"ভারত\",\"ভাৰত\",\"ਭਾਰਤ\",\"ભારત\",\"ଭାରତ\",\"இந்தியா\",\"இலங்கை\",\"சிங்கப்பூர்\",\"భారత్\",\"ಭಾರತ\",\"ഭാരതം\",\"ලංකා\",\"คอม\",\"ไทย\",\"ລາວ\",\"გე\",\"みんな\",\"アマゾン\",\"クラウド\",\"グーグル\",\"コム\",\"ストア\",\"セール\",\"ファッション\",\"ポイント\",\"世界\",\"中信\",\"中国\",\"中國\",\"中文网\",\"亚马逊\",\"企业\",\"佛山\",\"信息\",\"健康\",\"八卦\",\"公司\",\"公益\",\"台湾\",\"台灣\",\"商城\",\"商店\",\"商标\",\"嘉里\",\"嘉里大酒店\",\"在线\",\"大拿\",\"天主教\",\"娱乐\",\"家電\",\"广东\",\"微博\",\"慈善\",\"我爱你\",\"手机\",\"招聘\",\"政务\",\"政府\",\"新加坡\",\"新闻\",\"时尚\",\"書籍\",\"机构\",\"淡马锡\",\"游戏\",\"澳門\",\"点看\",\"移动\",\"组织机构\",\"网址\",\"网店\",\"网站\",\"网络\",\"联通\",\"诺基亚\",\"谷歌\",\"购物\",\"通販\",\"集团\",\"電訊盈科\",\"飞利浦\",\"食品\",\"餐厅\",\"香格里拉\",\"香港\",\"닷넷\",\"닷컴\",\"삼성\",\"한국\"]");
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4306,7 +4312,7 @@ exports.default = function (text) {
 };
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, exports) {
 
 var g;
@@ -4332,7 +4338,7 @@ module.exports = g;
 
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4345,7 +4351,7 @@ module.exports = g;
 
 
 
-var ReactPropTypesSecret = __webpack_require__(30);
+var ReactPropTypesSecret = __webpack_require__(31);
 
 function emptyFunction() {}
 function emptyFunctionWithReset() {}
@@ -4404,7 +4410,7 @@ module.exports = function() {
 
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4423,7 +4429,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4434,28 +4440,28 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.d(__webpack_exports__, "Launcher", function() { return /* reexport */ components_LauncherNew; });
 
 // EXTERNAL MODULE: ./src/styles/emojiPicker.css
-var emojiPicker = __webpack_require__(8);
+var emojiPicker = __webpack_require__(9);
 
 // EXTERNAL MODULE: ./src/styles/chat-window.css
-var chat_window = __webpack_require__(9);
+var chat_window = __webpack_require__(10);
 
 // EXTERNAL MODULE: ./src/styles/launcher.css
-var launcher = __webpack_require__(10);
+var launcher = __webpack_require__(11);
 
 // EXTERNAL MODULE: ./src/styles/header.css
-var header = __webpack_require__(11);
+var header = __webpack_require__(12);
 
 // EXTERNAL MODULE: ./src/styles/message.css
-var styles_message = __webpack_require__(12);
+var styles_message = __webpack_require__(13);
 
 // EXTERNAL MODULE: ./src/styles/user-input.css
-var user_input = __webpack_require__(13);
+var user_input = __webpack_require__(14);
 
 // EXTERNAL MODULE: ./src/styles/popup-window.css
-var popup_window = __webpack_require__(14);
+var popup_window = __webpack_require__(15);
 
 // EXTERNAL MODULE: ./src/styles/pin-message.css
-var pin_message = __webpack_require__(15);
+var pin_message = __webpack_require__(16);
 
 // CONCATENATED MODULE: ./src/styles/index.js
 
@@ -5734,12 +5740,22 @@ var FileIcon_FileIcon = /*#__PURE__*/function (_Component) {
 // CONCATENATED MODULE: ./src/components/Messages/FileMessage.js
 
 
-var FileMessage_FileMessage = function FileMessage(props) {
-  return /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("a", {
-    className: "sc-message--file",
-    href: props.data.url,
-    download: props.data.fileName
-  }, /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement(icons_FileIcon, null), /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("p", null, props.data.fileName));
+var FileMessage_FileMessage = function FileMessage(_ref) {
+  var message = _ref.message,
+    _ref$onFileDownload = _ref.onFileDownload,
+    onFileDownload = _ref$onFileDownload === void 0 ? function () {} : _ref$onFileDownload;
+  return (
+    /*#__PURE__*/
+    // <a className="sc-message--file" href={props.data.url} download={props.data.fileName}>
+    external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("a", {
+      className: "sc-message--file",
+      href: "#"
+    }, /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement(icons_FileIcon, {
+      onClick: function onClick() {
+        onFileDownload(message.data.documentId);
+      }
+    }), /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("p", null, message.data.documentId))
+  );
 };
 /* harmony default export */ var Messages_FileMessage = (FileMessage_FileMessage);
 // CONCATENATED MODULE: ./src/assets/chat-icon.svg
@@ -5753,7 +5769,8 @@ var FileMessage_FileMessage = function FileMessage(props) {
 
 
 function Message(_ref) {
-  var message = _ref.message;
+  var message = _ref.message,
+    onFileDownload = _ref.onFileDownload;
   var type = es_prop('type', message);
   var author = es_prop('author', message);
   var me = es_equals(author, 'me');
@@ -5764,7 +5781,11 @@ function Message(_ref) {
       case 'emoji':
         return /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement(Messages_EmojiMessage, message);
       case 'file':
-        return /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement(Messages_FileMessage, message);
+        // return <FileMessage {...message} onFileDownload={onFileDownload}/>;
+        return /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement(Messages_FileMessage, {
+          message: message,
+          onFileDownload: onFileDownload
+        });
       default:
         console.error("Attempting to load message with unsupported file type '" + type + "'");
     }
@@ -5803,7 +5824,8 @@ function MessageList(props) {
   }, props.messages.map(function (message, i) {
     return /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement(Messages, {
       message: message,
-      key: i
+      key: i,
+      onFileDownload: props.onFileDownload
     });
   }));
 }
@@ -5976,11 +5998,130 @@ var EmojiPicker_EmojiPicker = function EmojiPicker(_ref) {
   }));
 };
 /* harmony default export */ var emoji_picker_EmojiPicker = (EmojiPicker_EmojiPicker);
+// EXTERNAL MODULE: ./src/components/template-picker/templateData.json
+var templateData = __webpack_require__(7);
+
+// CONCATENATED MODULE: ./src/components/template-picker/TemplatePicker.js
+
+
+var TemplatePicker_TemplatePicker = function TemplatePicker(_ref) {
+  var onTemplatePicked = _ref.onTemplatePicked;
+  return /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("div", {
+    className: "sc-emoji-picker"
+  }, /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("div", {
+    className: "sc-emoji-picker--category"
+  }, /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("div", {
+    className: "sc-emoji-picker--category-title"
+  }, "Message Template"), templateData.map(function (template) {
+    return /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("button", {
+      key: template.id,
+      onClick: function onClick() {
+        return onTemplatePicked(template);
+      }
+    }, template.name)
+    // <span
+    //   key={char}
+    //   className="sc-emoji-picker--emoji"
+    //   onClick={() => onEmojiPicked(char)}
+    // >
+    //   {char}
+    // </span>
+    ;
+  })));
+};
+
+/* harmony default export */ var template_picker_TemplatePicker = (TemplatePicker_TemplatePicker);
+// CONCATENATED MODULE: ./src/components/popups/TemplatePopupWindow.js
+function TemplatePopupWindow_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+function TemplatePopupWindow_inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; TemplatePopupWindow_setPrototypeOf(subClass, superClass); }
+function TemplatePopupWindow_setPrototypeOf(o, p) { TemplatePopupWindow_setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return TemplatePopupWindow_setPrototypeOf(o, p); }
+function TemplatePopupWindow_defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var TemplatePopupWindow_TemplatePopupWindow = /*#__PURE__*/function (_Component) {
+  TemplatePopupWindow_inheritsLoose(TemplatePopupWindow, _Component);
+  function TemplatePopupWindow() {
+    var _this;
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+    _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+    TemplatePopupWindow_defineProperty(TemplatePopupWindow_assertThisInitialized(_this), "interceptLauncherClick", function (e) {
+      var isOpen = _this.props.isOpen;
+      var clickedOutside = !_this.emojiPopup.contains(e.target) && isOpen;
+      clickedOutside && _this.props.onClickedOutside(e);
+    });
+    return _this;
+  }
+  var _proto = TemplatePopupWindow.prototype;
+  _proto.componentDidMount = function componentDidMount() {
+    this.scLauncher = document.querySelector('#sc-launcher');
+    this.scLauncher.addEventListener('click', this.interceptLauncherClick);
+  };
+  _proto.componentWillUnmount = function componentWillUnmount() {
+    this.scLauncher.removeEventListener('click', this.interceptLauncherClick);
+  };
+  _proto.render = function render() {
+    var _this2 = this;
+    var _this$props = this.props,
+      isOpen = _this$props.isOpen,
+      children = _this$props.children;
+    return /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("div", {
+      className: "sc-popup-window",
+      ref: function ref(e) {
+        return _this2.emojiPopup = e;
+      }
+    }, /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("div", {
+      className: "sc-popup-window--cointainer " + (isOpen ? '' : 'closed')
+    }, children));
+  };
+  return TemplatePopupWindow;
+}(external_root_React_commonjs2_react_commonjs_react_amd_react_["Component"]);
+/* harmony default export */ var popups_TemplatePopupWindow = (TemplatePopupWindow_TemplatePopupWindow);
+// CONCATENATED MODULE: ./src/components/icons/TemplateIcon.js
+
+var TemplateIcon_TemplateIcon = function TemplateIcon(_ref) {
+  var tooltip = _ref.tooltip,
+    onClick = _ref.onClick,
+    isActive = _ref.isActive;
+  return /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("div", {
+    className: "sc-user-input--picker-wrapper"
+  }, tooltip, /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("button", {
+    id: "sc-template-picker-button",
+    className: "sc-user-input--emoji-icon-wrapper",
+    onClick: onClick
+  }, /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("svg", {
+    className: "sc-user-input--emoji-icon " + (isActive ? 'active' : ''),
+    version: "1.1",
+    xmlns: "http://www.w3.org/2000/svg",
+    x: "0px",
+    y: "0px",
+    width: "100%",
+    height: "10px",
+    viewBox: "0 0 37 37",
+    enableBackground: "new 0 0 37 37"
+  }, /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("g", null, /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("path", {
+    d: "M18.696,37C8.387,37,0,29.006,0,18.696C0,8.387,8.387,0,18.696,0c10.31,0,18.696,8.387,18.696,18.696 C37,29.006,29.006,37,18.696,37z M18.696,2C9.49,2,2,9.49,2,18.696c0,9.206,7.49,16.696,16.696,16.696 c9.206,0,16.696-7.49,16.696-16.696C35.393,9.49,27.902,2,18.696,2z"
+  })), /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("g", null, /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("circle", {
+    cx: "12.379",
+    cy: "14.359",
+    r: "1.938"
+  })), /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("g", null, /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("circle", {
+    cx: "24.371",
+    cy: "14.414",
+    r: "1.992"
+  })), /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("g", null, /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("path", {
+    d: "M18.035,27.453c-5.748,0-8.342-4.18-8.449-4.357c-0.286-0.473-0.135-1.087,0.338-1.373 c0.471-0.286,1.084-0.136,1.372,0.335c0.094,0.151,2.161,3.396,6.74,3.396c4.713,0,7.518-3.462,7.545-3.497 c0.343-0.432,0.973-0.504,1.405-0.161c0.433,0.344,0.505,0.973,0.161,1.405C27.009,23.374,23.703,27.453,18.035,27.453z"
+  })))));
+};
+/* harmony default export */ var icons_TemplateIcon = (TemplateIcon_TemplateIcon);
 // CONCATENATED MODULE: ./src/components/UserInput.js
 function UserInput_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 function UserInput_inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; UserInput_setPrototypeOf(subClass, superClass); }
 function UserInput_setPrototypeOf(o, p) { UserInput_setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return UserInput_setPrototypeOf(o, p); }
 function UserInput_defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
 
 
 
@@ -6010,9 +6151,42 @@ var UserInput_UserInput = /*#__PURE__*/function (_Component) {
         emojiPickerIsOpen: false
       });
     });
+    UserInput_defineProperty(UserInput_assertThisInitialized(_this), "toggleTemplatePicker", function (e) {
+      e.preventDefault();
+      if (!_this.state.templatePickerIsOpen) {
+        _this.setState({
+          templatePickerIsOpen: true
+        });
+      }
+    });
+    UserInput_defineProperty(UserInput_assertThisInitialized(_this), "closeTemplatePicker", function (e) {
+      if (_this.templatePickerButton.contains(e.target)) {
+        e.stopPropagation();
+        e.preventDefault();
+      }
+      _this.setState({
+        templatePickerIsOpen: false
+      });
+    });
     UserInput_defineProperty(UserInput_assertThisInitialized(_this), "_handleEmojiPicked", function (emoji) {
       _this.setState({
         emojiPickerIsOpen: false
+      });
+      if (_this.state.inputHasText) {
+        _this.userInput.innerHTML += emoji;
+      } else {
+        _this.props.onSubmit({
+          author: 'me',
+          type: 'emoji',
+          data: {
+            emoji: emoji
+          }
+        });
+      }
+    });
+    UserInput_defineProperty(UserInput_assertThisInitialized(_this), "_handleTemplatePicked", function (emoji) {
+      _this.setState({
+        templatePickerIsOpen: false
       });
       if (_this.state.inputHasText) {
         _this.userInput.innerHTML += emoji;
@@ -6042,17 +6216,28 @@ var UserInput_UserInput = /*#__PURE__*/function (_Component) {
         filter: _this.state.emojiFilter
       }));
     });
+    UserInput_defineProperty(UserInput_assertThisInitialized(_this), "_renderTemplatePopup", function () {
+      return /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement(popups_TemplatePopupWindow, {
+        isOpen: _this.state.templatePickerIsOpen,
+        onClickedOutside: _this.closeTemplatePicker
+      }, /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement(template_picker_TemplatePicker, {
+        onEmojiPicked: _this._handleEmojiPicked,
+        filter: _this.state.emojiFilter
+      }));
+    });
     _this.state = {
       inputActive: false,
       inputHasText: false,
       emojiPickerIsOpen: false,
+      templatePickerIsOpen: false,
       emojiFilter: ''
     };
     return _this;
   }
   var _proto = UserInput.prototype;
   _proto.componentDidMount = function componentDidMount() {
-    this.emojiPickerButton = document.querySelector('#sc-emoji-picker-button');
+    //this.emojiPickerButton = document.querySelector('#sc-emoji-picker-button'); 
+    this.templatePickerButton = document.querySelector('#sc-template-picker-button');
   };
   _proto.handleKeyDown = function handleKeyDown(event) {
     if (event.keyCode === 13 && !event.shiftKey) {
@@ -6120,6 +6305,7 @@ var UserInput_UserInput = /*#__PURE__*/function (_Component) {
   _proto.render = function render() {
     var _this3 = this;
     var _this$state = this.state,
+      templatePickerIsOpen = _this$state.templatePickerIsOpen,
       emojiPickerIsOpen = _this$state.emojiPickerIsOpen,
       inputActive = _this$state.inputActive;
     return /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("form", {
@@ -6149,12 +6335,10 @@ var UserInput_UserInput = /*#__PURE__*/function (_Component) {
       className: "sc-user-input--buttons"
     }, /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("div", {
       className: "sc-user-input--button"
-    }), /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("div", {
-      className: "sc-user-input--button"
-    }, this.props.showEmoji && /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement(icons_EmojiIcon, {
-      onClick: this.toggleEmojiPicker,
-      isActive: emojiPickerIsOpen,
-      tooltip: this._renderEmojiPopup()
+    }, this.props.showTemplate && /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement(icons_TemplateIcon, {
+      onClick: this.toggleTemplatePicker,
+      isActive: templatePickerIsOpen,
+      tooltip: this._renderTemplatePopup()
     })), this._renderSendOrFileIcon()));
   };
   return UserInput;
@@ -6487,10 +6671,12 @@ function ChatWindow(props) {
     onClose = props.onClose,
     agentProfile = props.agentProfile,
     showEmoji = props.showEmoji,
+    showTemplate = props.showTemplate,
     fileUpload = props.fileUpload,
     messageList = props.messageList,
     onUserInputSubmit = props.onUserInputSubmit,
     onFilesSelected = props.onFilesSelected,
+    onFileDownload = props.onFileDownload,
     pinMessage = props.pinMessage,
     onPinMessage = props.onPinMessage,
     placeholder = props.placeholder;
@@ -6511,11 +6697,13 @@ function ChatWindow(props) {
     onPinMessage: onPinMessage
   }), /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement(components_MessageList, {
     messages: messageList,
+    onFileDownload: onFileDownload,
     imageUrl: imageUrl
   }), /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement(components_UserInput, {
     onSubmit: onUserInputSubmit,
     onFilesSelected: onFilesSelected,
     showEmoji: showEmoji,
+    showTemplate: showTemplate,
     fileUpload: fileUpload,
     placeholder: placeholder
   }));
@@ -6525,12 +6713,14 @@ ChatWindow.propTypes = {
   onClose: prop_types_default.a.func.isRequired,
   agentProfile: prop_types_default.a.object.isRequired,
   showEmoji: prop_types_default.a.bool,
+  showTemplate: prop_types_default.a.bool,
   fileUpload: prop_types_default.a.bool,
   messageList: prop_types_default.a.array,
   onUserInputSubmit: prop_types_default.a.func.isRequired,
   onFilesSelected: prop_types_default.a.func,
   pinMessage: prop_types_default.a.object,
   onPinMessage: prop_types_default.a.func,
+  onFileDownload: prop_types_default.a.func,
   placeholder: prop_types_default.a.string
 };
 /* harmony default export */ var components_ChatWindow = (ChatWindow);
@@ -6553,12 +6743,14 @@ function LauncherNew(props) {
     onClick = props.onClick,
     mute = props.mute,
     showEmoji = props.showEmoji,
+    showTemplate = props.showTemplate,
     agentProfile = props.agentProfile,
     messageList = props.messageList,
     newMessagesCount = props.newMessagesCount,
     onMessageWasSent = props.onMessageWasSent,
     onFilesSelected = props.onFilesSelected,
     fileUpload = props.fileUpload,
+    onFileDownload = props.onFileDownload,
     pinMessage = props.pinMessage,
     onPinMessage = props.onPinMessage,
     placeholder = props.placeholder;
@@ -6631,9 +6823,11 @@ function LauncherNew(props) {
     isOpen: state.isOpen,
     onClose: onClick,
     showEmoji: showEmoji,
+    showTemplate: showTemplate,
     fileUpload: fileUpload,
     pinMessage: pinMessage,
     onPinMessage: onPinMessage,
+    onFileDownload: onFileDownload,
     placeholder: placeholder
   }));
 }

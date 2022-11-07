@@ -14,7 +14,7 @@ function MessageList(props) {
 
   return (
     <div className="sc-message-list" ref={element}>
-      {props.messages.map((message, i) => <Message message={message} key={i} />)}
+      {props.messages.map((message, i) => <Message message={message} key={i} onFileDownload={props.onFileDownload}/>)}
     </div>
   );
 }

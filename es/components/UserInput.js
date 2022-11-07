@@ -9,6 +9,9 @@ import FileIcon from './icons/FileIcon';
 import EmojiIcon from './icons/EmojiIcon';
 import PopupWindow from './popups/PopupWindow';
 import EmojiPicker from './emoji-picker/EmojiPicker';
+import TemplatePicker from './template-picker/TemplatePicker';
+import TemplatePopupWindow from './popups/TemplatePopupWindow';
+import TemplateIcon from './icons/TemplateIcon';
 var UserInput = /*#__PURE__*/function (_Component) {
   _inheritsLoose(UserInput, _Component);
   function UserInput() {
@@ -31,9 +34,42 @@ var UserInput = /*#__PURE__*/function (_Component) {
         emojiPickerIsOpen: false
       });
     });
+    _defineProperty(_assertThisInitialized(_this), "toggleTemplatePicker", function (e) {
+      e.preventDefault();
+      if (!_this.state.templatePickerIsOpen) {
+        _this.setState({
+          templatePickerIsOpen: true
+        });
+      }
+    });
+    _defineProperty(_assertThisInitialized(_this), "closeTemplatePicker", function (e) {
+      if (_this.templatePickerButton.contains(e.target)) {
+        e.stopPropagation();
+        e.preventDefault();
+      }
+      _this.setState({
+        templatePickerIsOpen: false
+      });
+    });
     _defineProperty(_assertThisInitialized(_this), "_handleEmojiPicked", function (emoji) {
       _this.setState({
         emojiPickerIsOpen: false
+      });
+      if (_this.state.inputHasText) {
+        _this.userInput.innerHTML += emoji;
+      } else {
+        _this.props.onSubmit({
+          author: 'me',
+          type: 'emoji',
+          data: {
+            emoji: emoji
+          }
+        });
+      }
+    });
+    _defineProperty(_assertThisInitialized(_this), "_handleTemplatePicked", function (emoji) {
+      _this.setState({
+        templatePickerIsOpen: false
       });
       if (_this.state.inputHasText) {
         _this.userInput.innerHTML += emoji;
@@ -63,17 +99,28 @@ var UserInput = /*#__PURE__*/function (_Component) {
         filter: _this.state.emojiFilter
       }));
     });
+    _defineProperty(_assertThisInitialized(_this), "_renderTemplatePopup", function () {
+      return /*#__PURE__*/React.createElement(TemplatePopupWindow, {
+        isOpen: _this.state.templatePickerIsOpen,
+        onClickedOutside: _this.closeTemplatePicker
+      }, /*#__PURE__*/React.createElement(TemplatePicker, {
+        onEmojiPicked: _this._handleEmojiPicked,
+        filter: _this.state.emojiFilter
+      }));
+    });
     _this.state = {
       inputActive: false,
       inputHasText: false,
       emojiPickerIsOpen: false,
+      templatePickerIsOpen: false,
       emojiFilter: ''
     };
     return _this;
   }
   var _proto = UserInput.prototype;
   _proto.componentDidMount = function componentDidMount() {
-    this.emojiPickerButton = document.querySelector('#sc-emoji-picker-button');
+    //this.emojiPickerButton = document.querySelector('#sc-emoji-picker-button'); 
+    this.templatePickerButton = document.querySelector('#sc-template-picker-button');
   };
   _proto.handleKeyDown = function handleKeyDown(event) {
     if (event.keyCode === 13 && !event.shiftKey) {
@@ -141,6 +188,7 @@ var UserInput = /*#__PURE__*/function (_Component) {
   _proto.render = function render() {
     var _this3 = this;
     var _this$state = this.state,
+      templatePickerIsOpen = _this$state.templatePickerIsOpen,
       emojiPickerIsOpen = _this$state.emojiPickerIsOpen,
       inputActive = _this$state.inputActive;
     return /*#__PURE__*/React.createElement("form", {
@@ -170,12 +218,10 @@ var UserInput = /*#__PURE__*/function (_Component) {
       className: "sc-user-input--buttons"
     }, /*#__PURE__*/React.createElement("div", {
       className: "sc-user-input--button"
-    }), /*#__PURE__*/React.createElement("div", {
-      className: "sc-user-input--button"
-    }, this.props.showEmoji && /*#__PURE__*/React.createElement(EmojiIcon, {
-      onClick: this.toggleEmojiPicker,
-      isActive: emojiPickerIsOpen,
-      tooltip: this._renderEmojiPopup()
+    }, this.props.showTemplate && /*#__PURE__*/React.createElement(TemplateIcon, {
+      onClick: this.toggleTemplatePicker,
+      isActive: templatePickerIsOpen,
+      tooltip: this._renderTemplatePopup()
     })), this._renderSendOrFileIcon()));
   };
   return UserInput;

@@ -12,12 +12,14 @@ function LauncherNew(props) {
     onClick = props.onClick,
     mute = props.mute,
     showEmoji = props.showEmoji,
+    showTemplate = props.showTemplate,
     agentProfile = props.agentProfile,
     messageList = props.messageList,
     newMessagesCount = props.newMessagesCount,
     onMessageWasSent = props.onMessageWasSent,
     onFilesSelected = props.onFilesSelected,
     fileUpload = props.fileUpload,
+    onFileDownload = props.onFileDownload,
     pinMessage = props.pinMessage,
     onPinMessage = props.onPinMessage,
     placeholder = props.placeholder;
@@ -90,9 +92,11 @@ function LauncherNew(props) {
     isOpen: state.isOpen,
     onClose: onClick,
     showEmoji: showEmoji,
+    showTemplate: showTemplate,
     fileUpload: fileUpload,
     pinMessage: pinMessage,
     onPinMessage: onPinMessage,
+    onFileDownload: onFileDownload,
     placeholder: placeholder
   }));
 }

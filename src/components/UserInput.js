@@ -5,6 +5,9 @@ import FileIcon from './icons/FileIcon';
 import EmojiIcon from './icons/EmojiIcon';
 import PopupWindow from './popups/PopupWindow';
 import EmojiPicker from './emoji-picker/EmojiPicker';
+import TemplatePicker from './template-picker/TemplatePicker';
+import TemplatePopupWindow from './popups/TemplatePopupWindow';
+import TemplateIcon from './icons/TemplateIcon';
 
 class UserInput extends Component {
   constructor() {
@@ -13,12 +16,14 @@ class UserInput extends Component {
       inputActive: false,
       inputHasText: false,
       emojiPickerIsOpen: false,
+      templatePickerIsOpen: false,
       emojiFilter: ''
     };
   }
 
   componentDidMount() {
-    this.emojiPickerButton = document.querySelector('#sc-emoji-picker-button'); 
+    //this.emojiPickerButton = document.querySelector('#sc-emoji-picker-button'); 
+    this.templatePickerButton = document.querySelector('#sc-template-picker-button'); 
   }
 
   handleKeyDown(event) {
@@ -50,6 +55,22 @@ class UserInput extends Component {
       e.preventDefault();
     }
     this.setState({ emojiPickerIsOpen: false });
+  }
+
+
+  toggleTemplatePicker = (e) => {
+    e.preventDefault();
+    if (!this.state.templatePickerIsOpen) {
+      this.setState({ templatePickerIsOpen: true });
+    }
+  }
+
+  closeTemplatePicker = (e) => {
+    if (this.templatePickerButton.contains(e.target)) {
+      e.stopPropagation();
+      e.preventDefault();
+    }
+    this.setState({ templatePickerIsOpen: false });
   }
 
   _submitText(event) {
@@ -84,6 +105,19 @@ class UserInput extends Component {
     }
   }
 
+  _handleTemplatePicked = (emoji) => {
+    this.setState({ templatePickerIsOpen: false });
+    if(this.state.inputHasText) {
+      this.userInput.innerHTML += emoji;
+    } else {
+      this.props.onSubmit({
+        author: 'me',
+        type: 'emoji',
+        data: { emoji }
+      });
+    }
+  }
+
   handleEmojiFilterChange = (event) => {
     const emojiFilter = event.target.value;
     this.setState({ emojiFilter });
@@ -100,6 +134,18 @@ class UserInput extends Component {
         filter={this.state.emojiFilter}
       />
     </PopupWindow>
+  )
+
+  _renderTemplatePopup = () => (
+    <TemplatePopupWindow
+      isOpen={this.state.templatePickerIsOpen}
+      onClickedOutside={this.closeTemplatePicker}
+    >
+      <TemplatePicker
+        onEmojiPicked={this._handleEmojiPicked}
+        filter={this.state.emojiFilter}
+      />
+    </TemplatePopupWindow>
   )
 
   _renderSendOrFileIcon() {
@@ -134,7 +180,7 @@ class UserInput extends Component {
   }
 
   render() {
-    const { emojiPickerIsOpen, inputActive } = this.state;
+    const { templatePickerIsOpen, emojiPickerIsOpen, inputActive } = this.state;
     return (
       <form className={`sc-user-input ${(inputActive ? 'active' : '')}`}>
         <div
@@ -151,13 +197,19 @@ class UserInput extends Component {
         />
 
         <div className="sc-user-input--buttons">
-          <div className="sc-user-input--button"/>
+          {/* <div className="sc-user-input--button"/> */}
 
           <div className="sc-user-input--button">
-            {this.props.showEmoji && <EmojiIcon
+          {/* {this.props.showEmoji && <EmojiIcon
               onClick={this.toggleEmojiPicker}
               isActive={emojiPickerIsOpen}
               tooltip={this._renderEmojiPopup()}
+            />} */}
+
+          {this.props.showTemplate && <TemplateIcon
+              onClick={this.toggleTemplatePicker}
+              isActive={templatePickerIsOpen}
+              tooltip={this._renderTemplatePopup()}
             />}
           </div>
 

@@ -12,10 +12,12 @@ function ChatWindow(props) {
     onClose,
     agentProfile,
     showEmoji,
+    showTemplate,
     fileUpload,
     messageList,
     onUserInputSubmit,
     onFilesSelected,
+    onFileDownload,
     pinMessage,
 	  onPinMessage,
     placeholder,
@@ -38,13 +40,14 @@ function ChatWindow(props) {
 
       <MessageList
         messages={messageList}
+        onFileDownload={onFileDownload}
         imageUrl={imageUrl}
       />
-
       <UserInput
         onSubmit={onUserInputSubmit}
         onFilesSelected={onFilesSelected}
         showEmoji={showEmoji}
+        showTemplate={showTemplate}
         fileUpload={fileUpload}
         placeholder={placeholder}
       />
@@ -57,12 +60,14 @@ ChatWindow.propTypes = {
   onClose: PropTypes.func.isRequired,
   agentProfile: PropTypes.object.isRequired,
   showEmoji: PropTypes.bool,
+  showTemplate: PropTypes.bool,
   fileUpload: PropTypes.bool,
   messageList: PropTypes.array,
   onUserInputSubmit: PropTypes.func.isRequired,
   onFilesSelected: PropTypes.func,
   pinMessage: PropTypes.object,
   onPinMessage: PropTypes.func,
+  onFileDownload: PropTypes.func,
   placeholder: PropTypes.string,
 };
 

@@ -87,7 +87,8 @@ function Demo() {
         newMessagesCount={state.newMessagesCount}
         onClick={onClick}
         isOpen={state.isOpen}
-        showEmoji
+        showEmoji={true}
+        showTemplate={true}
         fileUpload={state.fileUpload}
         // pinMessage={{
         // 	id: 123,

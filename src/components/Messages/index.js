@@ -6,7 +6,7 @@ import EmojiMessage from './EmojiMessage';
 import FileMessage from './FileMessage';
 import chatIconUrl from './../../assets/chat-icon.svg';
 
-function Message({ message }) {
+function Message({ message, onFileDownload }) {
   const type = prop('type', message);
   const author = prop('author', message);
   const me = equals(author, 'me');
@@ -18,7 +18,8 @@ function Message({ message }) {
     case 'emoji':
       return <EmojiMessage {...message} />;
     case 'file':
-      return <FileMessage {...message} />;
+      // return <FileMessage {...message} onFileDownload={onFileDownload}/>;
+      return <FileMessage message={message} onFileDownload={onFileDownload}/>;
     default:
       console.error(`Attempting to load message with unsupported file type '${type}'`);
     }

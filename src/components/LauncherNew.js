@@ -13,12 +13,14 @@ function LauncherNew(props) {
     onClick,
     mute,
 	  showEmoji,
+    showTemplate,
 	  agentProfile,
 	  messageList,
 	  newMessagesCount,
 	  onMessageWasSent,
 	  onFilesSelected,
     fileUpload,
+    onFileDownload,
     pinMessage,
 	  onPinMessage,
     placeholder,
@@ -98,9 +100,11 @@ function LauncherNew(props) {
 		    isOpen={state.isOpen}
 		    onClose={onClick}
 		    showEmoji={showEmoji}
+        showTemplate={showTemplate}
         fileUpload={fileUpload}
         pinMessage={pinMessage}
 		    onPinMessage={onPinMessage}
+        onFileDownload={onFileDownload}
         placeholder={placeholder}
 	    />
     </div>

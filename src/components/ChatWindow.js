@@ -15,8 +15,10 @@ function ChatWindow(props) {
     showTemplate,
     fileUpload,
     messageList,
+    templateList,
     onUserInputSubmit,
     onFilesSelected,
+    onTemplateSelected,
     onFileDownload,
     pinMessage,
 	  onPinMessage,
@@ -44,8 +46,10 @@ function ChatWindow(props) {
         imageUrl={imageUrl}
       />
       <UserInput
+        templateList={templateList}
         onSubmit={onUserInputSubmit}
         onFilesSelected={onFilesSelected}
+        onTemplateSelected={onTemplateSelected}
         showEmoji={showEmoji}
         showTemplate={showTemplate}
         fileUpload={fileUpload}

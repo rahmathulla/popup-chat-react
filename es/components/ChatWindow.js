@@ -13,8 +13,10 @@ function ChatWindow(props) {
     showTemplate = props.showTemplate,
     fileUpload = props.fileUpload,
     messageList = props.messageList,
+    templateList = props.templateList,
     onUserInputSubmit = props.onUserInputSubmit,
     onFilesSelected = props.onFilesSelected,
+    onTemplateSelected = props.onTemplateSelected,
     onFileDownload = props.onFileDownload,
     pinMessage = props.pinMessage,
     onPinMessage = props.onPinMessage,
@@ -39,8 +41,10 @@ function ChatWindow(props) {
     onFileDownload: onFileDownload,
     imageUrl: imageUrl
   }), /*#__PURE__*/React.createElement(UserInput, {
+    templateList: templateList,
     onSubmit: onUserInputSubmit,
     onFilesSelected: onFilesSelected,
+    onTemplateSelected: onTemplateSelected,
     showEmoji: showEmoji,
     showTemplate: showTemplate,
     fileUpload: fileUpload,

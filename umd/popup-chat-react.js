@@ -95,7 +95,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 8);
+/******/ 	return __webpack_require__(__webpack_require__.s = 7);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -118,7 +118,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__0__;
 if (false) { var throwOnDirectAccess, ReactIs; } else {
   // By explicitly using `prop-types` you are opting into new production behavior.
   // http://fb.me/prop-types-in-prod
-  module.exports = __webpack_require__(30)();
+  module.exports = __webpack_require__(31)();
 }
 
 
@@ -3180,16 +3180,16 @@ module.exports = JSON.parse("[{\"name\":\"People\",\"emojis\":[{\"no\":6,\"code\
 
 /***/ }),
 /* 7 */
-/***/ (function(module) {
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = JSON.parse("[{\"id\":1,\"name\":\"Template 1\"},{\"id\":2,\"name\":\"Template 2\"},{\"id\":3,\"name\":\"Template 3\"}]");
+module.exports = __webpack_require__(33);
+
 
 /***/ }),
 /* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(32);
-
+// extracted by mini-css-extract-plugin
 
 /***/ }),
 /* 9 */
@@ -4339,6 +4339,12 @@ module.exports = g;
 
 /***/ }),
 /* 30 */
+/***/ (function(module) {
+
+module.exports = JSON.parse("{}");
+
+/***/ }),
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4351,7 +4357,7 @@ module.exports = g;
 
 
 
-var ReactPropTypesSecret = __webpack_require__(31);
+var ReactPropTypesSecret = __webpack_require__(32);
 
 function emptyFunction() {}
 function emptyFunctionWithReset() {}
@@ -4410,7 +4416,7 @@ module.exports = function() {
 
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4429,7 +4435,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4440,7 +4446,10 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.d(__webpack_exports__, "Launcher", function() { return /* reexport */ components_LauncherNew; });
 
 // EXTERNAL MODULE: ./src/styles/emojiPicker.css
-var emojiPicker = __webpack_require__(9);
+var emojiPicker = __webpack_require__(8);
+
+// EXTERNAL MODULE: ./src/styles/templatePicker.css
+var templatePicker = __webpack_require__(9);
 
 // EXTERNAL MODULE: ./src/styles/chat-window.css
 var chat_window = __webpack_require__(10);
@@ -4464,6 +4473,7 @@ var popup_window = __webpack_require__(15);
 var pin_message = __webpack_require__(16);
 
 // CONCATENATED MODULE: ./src/styles/index.js
+
 
 
 
@@ -5999,24 +6009,27 @@ var EmojiPicker_EmojiPicker = function EmojiPicker(_ref) {
 };
 /* harmony default export */ var emoji_picker_EmojiPicker = (EmojiPicker_EmojiPicker);
 // EXTERNAL MODULE: ./src/components/template-picker/templateData.json
-var templateData = __webpack_require__(7);
+var templateData = __webpack_require__(30);
 
 // CONCATENATED MODULE: ./src/components/template-picker/TemplatePicker.js
 
 
 var TemplatePicker_TemplatePicker = function TemplatePicker(_ref) {
-  var onTemplatePicked = _ref.onTemplatePicked;
+  var onTemplatePicked = _ref.onTemplatePicked,
+    templateList = _ref.templateList;
   return /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("div", {
     className: "sc-emoji-picker"
   }, /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("div", {
     className: "sc-emoji-picker--category"
   }, /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("div", {
     className: "sc-emoji-picker--category-title"
-  }, "Message Template"), templateData.map(function (template) {
-    return /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("button", {
+  }, "Message Template"), templateList.map(function (template) {
+    return /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("span", {
+      className: "template-span",
       key: template.id,
       onClick: function onClick() {
-        return onTemplatePicked(template);
+        console.log('=======templateData====', template);
+        onTemplatePicked(template);
       }
     }, template.name)
     // <span
@@ -6184,21 +6197,11 @@ var UserInput_UserInput = /*#__PURE__*/function (_Component) {
         });
       }
     });
-    UserInput_defineProperty(UserInput_assertThisInitialized(_this), "_handleTemplatePicked", function (emoji) {
+    UserInput_defineProperty(UserInput_assertThisInitialized(_this), "_handleTemplatePicked", function (template) {
       _this.setState({
         templatePickerIsOpen: false
       });
-      if (_this.state.inputHasText) {
-        _this.userInput.innerHTML += emoji;
-      } else {
-        _this.props.onSubmit({
-          author: 'me',
-          type: 'emoji',
-          data: {
-            emoji: emoji
-          }
-        });
-      }
+      _this.props.onTemplateSelected(template);
     });
     UserInput_defineProperty(UserInput_assertThisInitialized(_this), "handleEmojiFilterChange", function (event) {
       var emojiFilter = event.target.value;
@@ -6221,7 +6224,8 @@ var UserInput_UserInput = /*#__PURE__*/function (_Component) {
         isOpen: _this.state.templatePickerIsOpen,
         onClickedOutside: _this.closeTemplatePicker
       }, /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement(template_picker_TemplatePicker, {
-        onEmojiPicked: _this._handleEmojiPicked,
+        onTemplatePicked: _this._handleTemplatePicked,
+        templateList: _this.props.templateList,
         filter: _this.state.emojiFilter
       }));
     });
@@ -6674,8 +6678,10 @@ function ChatWindow(props) {
     showTemplate = props.showTemplate,
     fileUpload = props.fileUpload,
     messageList = props.messageList,
+    templateList = props.templateList,
     onUserInputSubmit = props.onUserInputSubmit,
     onFilesSelected = props.onFilesSelected,
+    onTemplateSelected = props.onTemplateSelected,
     onFileDownload = props.onFileDownload,
     pinMessage = props.pinMessage,
     onPinMessage = props.onPinMessage,
@@ -6700,8 +6706,10 @@ function ChatWindow(props) {
     onFileDownload: onFileDownload,
     imageUrl: imageUrl
   }), /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement(components_UserInput, {
+    templateList: templateList,
     onSubmit: onUserInputSubmit,
     onFilesSelected: onFilesSelected,
+    onTemplateSelected: onTemplateSelected,
     showEmoji: showEmoji,
     showTemplate: showTemplate,
     fileUpload: fileUpload,
@@ -6746,9 +6754,11 @@ function LauncherNew(props) {
     showTemplate = props.showTemplate,
     agentProfile = props.agentProfile,
     messageList = props.messageList,
+    templateList = props.templateList,
     newMessagesCount = props.newMessagesCount,
     onMessageWasSent = props.onMessageWasSent,
     onFilesSelected = props.onFilesSelected,
+    onTemplateSelected = props.onTemplateSelected,
     fileUpload = props.fileUpload,
     onFileDownload = props.onFileDownload,
     pinMessage = props.pinMessage,
@@ -6756,7 +6766,8 @@ function LauncherNew(props) {
     placeholder = props.placeholder;
   var defaultState = {
     isOpen: false,
-    messageList: messageList
+    messageList: messageList,
+    templateList: templateList
   };
   var _useState = Object(external_root_React_commonjs2_react_commonjs_react_amd_react_["useState"])(defaultState),
     state = _useState[0],
@@ -6817,8 +6828,10 @@ function LauncherNew(props) {
     src: logo_no_bg
   })), /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement(components_ChatWindow, {
     messageList: messageList,
+    templateList: templateList,
     onUserInputSubmit: onMessageWasSent,
     onFilesSelected: onFilesSelected,
+    onTemplateSelected: onTemplateSelected,
     agentProfile: agentProfile,
     isOpen: state.isOpen,
     onClose: onClick,

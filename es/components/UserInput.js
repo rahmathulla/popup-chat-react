@@ -67,21 +67,11 @@ var UserInput = /*#__PURE__*/function (_Component) {
         });
       }
     });
-    _defineProperty(_assertThisInitialized(_this), "_handleTemplatePicked", function (emoji) {
+    _defineProperty(_assertThisInitialized(_this), "_handleTemplatePicked", function (template) {
       _this.setState({
         templatePickerIsOpen: false
       });
-      if (_this.state.inputHasText) {
-        _this.userInput.innerHTML += emoji;
-      } else {
-        _this.props.onSubmit({
-          author: 'me',
-          type: 'emoji',
-          data: {
-            emoji: emoji
-          }
-        });
-      }
+      _this.props.onTemplateSelected(template);
     });
     _defineProperty(_assertThisInitialized(_this), "handleEmojiFilterChange", function (event) {
       var emojiFilter = event.target.value;
@@ -104,7 +94,8 @@ var UserInput = /*#__PURE__*/function (_Component) {
         isOpen: _this.state.templatePickerIsOpen,
         onClickedOutside: _this.closeTemplatePicker
       }, /*#__PURE__*/React.createElement(TemplatePicker, {
-        onEmojiPicked: _this._handleEmojiPicked,
+        onTemplatePicked: _this._handleTemplatePicked,
+        templateList: _this.props.templateList,
         filter: _this.state.emojiFilter
       }));
     });

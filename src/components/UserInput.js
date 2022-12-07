@@ -105,17 +105,9 @@ class UserInput extends Component {
     }
   }
 
-  _handleTemplatePicked = (emoji) => {
+  _handleTemplatePicked = (template) => {
     this.setState({ templatePickerIsOpen: false });
-    if(this.state.inputHasText) {
-      this.userInput.innerHTML += emoji;
-    } else {
-      this.props.onSubmit({
-        author: 'me',
-        type: 'emoji',
-        data: { emoji }
-      });
-    }
+    this.props.onTemplateSelected(template);
   }
 
   handleEmojiFilterChange = (event) => {
@@ -142,7 +134,8 @@ class UserInput extends Component {
       onClickedOutside={this.closeTemplatePicker}
     >
       <TemplatePicker
-        onEmojiPicked={this._handleEmojiPicked}
+        onTemplatePicked={this._handleTemplatePicked}
+        templateList={this.props.templateList}
         filter={this.state.emojiFilter}
       />
     </TemplatePopupWindow>

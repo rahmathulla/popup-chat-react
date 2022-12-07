@@ -15,9 +15,11 @@ function LauncherNew(props) {
     showTemplate = props.showTemplate,
     agentProfile = props.agentProfile,
     messageList = props.messageList,
+    templateList = props.templateList,
     newMessagesCount = props.newMessagesCount,
     onMessageWasSent = props.onMessageWasSent,
     onFilesSelected = props.onFilesSelected,
+    onTemplateSelected = props.onTemplateSelected,
     fileUpload = props.fileUpload,
     onFileDownload = props.onFileDownload,
     pinMessage = props.pinMessage,
@@ -25,7 +27,8 @@ function LauncherNew(props) {
     placeholder = props.placeholder;
   var defaultState = {
     isOpen: false,
-    messageList: messageList
+    messageList: messageList,
+    templateList: templateList
   };
   var _useState = useState(defaultState),
     state = _useState[0],
@@ -86,8 +89,10 @@ function LauncherNew(props) {
     src: launcherIcon
   })), /*#__PURE__*/React.createElement(ChatWindow, {
     messageList: messageList,
+    templateList: templateList,
     onUserInputSubmit: onMessageWasSent,
     onFilesSelected: onFilesSelected,
+    onTemplateSelected: onTemplateSelected,
     agentProfile: agentProfile,
     isOpen: state.isOpen,
     onClose: onClick,

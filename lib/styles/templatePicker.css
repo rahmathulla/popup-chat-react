@@ -1,0 +1,8 @@
+.template-span {
+    border: 1px solid black;
+    background-color: #d2cfcf;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+
+}

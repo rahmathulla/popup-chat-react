@@ -2,16 +2,19 @@ import React from 'react';
 import templateData from './templateData';
 
 
-const TemplatePicker = ({ onTemplatePicked }) => (
+const TemplatePicker = ({ onTemplatePicked, templateList }) => (
   <div className="sc-emoji-picker">
         <div className="sc-emoji-picker--category">
           <div className="sc-emoji-picker--category-title">Message Template</div>
           
-          {templateData.map((template) => {
+          {templateList.map((template) => {
             return (
-              <button key={template.id}  onClick={() => onTemplatePicked(template)}>
+              <span className = "template-span" key={template.id}  onClick={() => {
+                console.log('=======templateData====', template)
+                onTemplatePicked(template)
+                }}>
                 {template.name}
-              </button>
+              </span>
               // <span
               //   key={char}
               //   className="sc-emoji-picker--emoji"

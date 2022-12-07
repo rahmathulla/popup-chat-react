@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { render } from 'react-dom';
 import { Launcher } from '../../src';
 import messageHistory from './messageHistory';
+import messageTemplate from './messageTemplate';
 import TestArea from './TestArea';
 import Header from './Header';
 import Footer from './Footer';
@@ -11,6 +12,7 @@ import './../assets/styles';
 function Demo() {
   const [state, setState] = useState({
     messageList: messageHistory,
+    templateList: messageTemplate,
     newMessagesCount: 0,
     isOpen: false,
     fileUpload: false,
@@ -21,6 +23,10 @@ function Demo() {
       ...state,
       messageList: [...state.messageList, message]
     }));
+  }
+
+  function onTemplateSelected(template) {
+   console.log('=======template====', template)
   }
 
   function onFilesSelected(fileList) {
@@ -83,7 +89,9 @@ function Demo() {
         }}
         onMessageWasSent={onMessageWasSent}
         onFilesSelected={onFilesSelected}
+        onTemplateSelected={onTemplateSelected}
         messageList={state.messageList}
+        templateList={state.templateList}
         newMessagesCount={state.newMessagesCount}
         onClick={onClick}
         isOpen={state.isOpen}

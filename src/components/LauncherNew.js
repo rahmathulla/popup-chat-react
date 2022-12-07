@@ -16,9 +16,11 @@ function LauncherNew(props) {
     showTemplate,
 	  agentProfile,
 	  messageList,
+    templateList,
 	  newMessagesCount,
 	  onMessageWasSent,
 	  onFilesSelected,
+    onTemplateSelected,
     fileUpload,
     onFileDownload,
     pinMessage,
@@ -29,6 +31,7 @@ function LauncherNew(props) {
   const defaultState = {
 	  isOpen: false,
 	  messageList,
+    templateList
   };
 
   const [state, setState] = useState(defaultState);
@@ -94,8 +97,10 @@ function LauncherNew(props) {
 
 	    <ChatWindow
 		    messageList={messageList}
+        templateList={templateList}
 		    onUserInputSubmit={onMessageWasSent}
 		    onFilesSelected={onFilesSelected}
+        onTemplateSelected={onTemplateSelected}
 		    agentProfile={agentProfile}
 		    isOpen={state.isOpen}
 		    onClose={onClick}
